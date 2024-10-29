@@ -25,10 +25,10 @@ public class SinglyLinnkedList {
             Nodo temp = cabeza; // se incia desde la cabeza (El primero ps)
 
             // recorremos todo el los nodos hasta encontrar un null en las referencias
-            while (temp.siguiente != null) {
-                temp = temp.siguiente;
+            while (temp.getSiguiente() != null) {
+                temp = temp.getSiguiente();
             }
-            temp.siguiente = nuevoNodo; // con este avanzas a la siguinte nodo
+            temp.setSiguiente(); = nuevoNodo; // con este avanzas a la siguinte nodo
 
         }
 
@@ -40,8 +40,8 @@ public class SinglyLinnkedList {
         Nodo temp = cabeza; // conmezamos desde la cabeza inicio
         // mientras temporal mno sea nulo
         while (temp != null) {
-            System.out.print(temp.dato + "->");
-            temp = temp.siguiente;
+            System.out.print(temp.getDato() + "->");
+            temp = temp.getSiguiente();
         }
 
         System.out.println("null");
@@ -57,11 +57,11 @@ public class SinglyLinnkedList {
             Nodo temp = cabeza; // conmezamos desde la cabeza inicio
             // mientras temporal no sea nulo
             while (temp != null) {
-                if (temp.dato == valor) {
+                if (temp.getDato() == valor) {
                     System.out.println("El datos si existe");
                     return true;
                 }
-                temp = temp.siguiente; // con este avanzas a la siguinte nodo
+                temp = temp.getSiguiente(); // con este avanzas a la siguinte nodo
 
 
 
@@ -80,15 +80,15 @@ public class SinglyLinnkedList {
 if(cabeza==null){
     System.out.println("No se puede eliminar porque la lista esta vacia");
 }
-if(cabeza.dato==valor){
-    cabeza=cabeza.siguiente; // la plabra siguente es la referencia al siguiente nodo
+if(cabeza.getDato()==valor){
+    cabeza=cabeza.getSiguiente(); // la plabra siguente es la referencia al siguiente nodo
     return;
 }
  Nodo temp=cabeza;
  Nodo anterior=null;
- while(temp!=null && temp.dato!=valor){//recorrer hasta que encontremos el nodo con valor deseado
+ while(temp!=null && temp.getDato()!=valor){//recorrer hasta que encontremos el nodo con valor deseado
     anterior=temp;
-    temp=temp.siguiente;
+    temp=temp.getSiguiente();
 
 }
 if(temp!=null){
@@ -96,9 +96,11 @@ if(temp!=null){
     return;
 }
 
-anterior.siguiente=temp.siguiente;
+anterior.setSiguiente(temp.getSiguiente());
 System.out.println("Se elimino correctamente"+valor); // se elimina el nodo que estamos buscando siempre y cuando se encuentre
 }
 
 }
 //Alt+Shift+F IDENTAR
+
+// este es otro comentario
